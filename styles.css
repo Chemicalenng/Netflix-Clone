@@ -1,0 +1,370 @@
+/* Normalising Css */
+html,
+body {
+    background-color: #181818;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header CSS */
+header {
+    background-color: transparent;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    transition: all ease 800ms;
+    right: 0;
+    padding: 12px 3%;
+    height: 3.5rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+header.black-backg {
+    background-color: rgb(20, 20, 20);
+}
+
+.left-nav,
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.logo {
+    width: 6.25rem;
+    height: 2rem;
+
+}
+
+.menu {
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.nav-item {
+    opacity: 0.80;
+    margin-right: 1.25rem;
+    color: #e5e5e5;
+    cursor: pointer;
+}
+
+.nav-item.click {
+    color: white;
+    opacity: 1;
+    font-weight: 500;
+}
+
+.user {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.right-nav,
+i,
+svg,
+.user {
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+/* Movies Section */
+.movies-section {
+    margin: 2.5625rem 0;
+}
+
+.row1-heading {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+    margin-bottom: 0.625rem;
+}
+
+.explore {
+    color: #54b9c5;
+    font-size: 0.75rem;
+    display: none;
+}
+
+.row1-heading:hover .explore {
+    display: inline-block;
+
+}
+
+.movies-row1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+}
+
+.movie-image {
+    margin-right: 0.45rem;
+    object-fit: contain;
+    border-radius: 4px;
+    width: 15.313rem;
+    transition: transform ease 500ms;
+}
+
+.movie-image:hover {
+    transition: transform ease 500ms;
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.movie-image:hover~.movie-image {
+    transform: translateX(25%);
+}
+
+/* Banner section */
+.banner-section {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: 100vh;
+    padding-top: 80px;
+    
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    margin-left: 5rem;
+
+}
+
+.title {
+    color: white;
+    font-size: 5.25rem;
+    line-height: 1;
+    margin: 0;
+    max-width: 40%;
+}
+
+.info {
+    margin-bottom: 0.85375rem;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.5;
+}
+
+.details {
+    font-size: 1.025rem;
+    color: white;
+    line-height: normal;
+    max-width: 40%;
+}
+
+.buttons-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.buttons1,
+.buttons2 {
+    border: none;
+    padding: 8px 23px;
+    margin: 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    align-content: center;
+    cursor: pointer;
+}
+
+.buttons1 {
+    background-color: white;
+    
+}
+
+.buttons2 {
+    background-color: grey;
+    align-items: center;
+    display: inline-flex;
+    
+}
+
+.banner-fadeBottom {
+    height: 4rem;
+    position: absolute;
+    backdrop-filter: blur(9px);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .buttons-cont {
+        padding-bottom: 5rem;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /* Styles */
+    .buttons-cont {
+        padding-bottom: 5rem;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    /* Styles */
+    .menu {
+        display: none;
+    }
+    .buttons-cont {
+        padding-bottom: 5rem;
+    }
+}
+@media (max-width:767px) {
+    .menu{
+        display: none;
+    }
+    .details, .title{
+        max-width: 100%;
+    }
+}
+/* Tablet (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+    /* Styles */
+    .menu {
+        display: none;
+    }
+
+    .details,
+    .title {
+        max-width: 100%;
+    }
+
+    .buttons-cont {
+        padding-bottom: 5rem;
+    }
+}
+
+/* Tablet (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+    /* Styles */
+    .menu {
+        display: none;
+    }
+
+    .details,
+    .title {
+        max-width: 100%;
+    }
+
+    .buttons-cont {
+        padding-bottom:12rem;
+    }
+}
+
+/* Tablet (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+    /* Styles */
+    .menu {
+        display: none;
+    }
+
+    .details,
+    .title {
+        max-width: 100%;
+    }
+
+    .buttons-cont {
+        padding-bottom: 12rem;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    /* Styles */
+    .buttons-cont {
+        padding-bottom: 12rem;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    /* Styles */
+    .buttons-cont {
+        padding-bottom: 12rem;
+    }
+}
+
+
+
+/* Adjust banner section for smaller screens */
+@media only screen and (max-width: 767px) {
+    .banner {
+        padding-top: 20px; /* Adjust spacing */
+        margin-left: 2rem; /* Center the content */
+    }
+
+    .title {
+        font-size: 2.75rem; /* Decrease font size */
+        
+    }
+    .info {
+        font-size: 1.125rem; /* Decrease font size */
+    }
+
+    .details {
+        font-size: 0.9rem; /* Decrease font size */
+    }
+
+    .buttons-cont {
+        
+        margin-top: 0.5rem;
+    }
+
+    .buttons1,
+    .buttons2 {
+        padding: 6px 18px; /* Adjust button padding */
+        font-size: 0.875rem; /* Decrease font size */
+    }
+}
+
+
